@@ -1,0 +1,23 @@
+{
+  "name": "now-static-bin",
+  "version": "0.0.31",
+  "description": "ZEIT Now v2.0 static binary builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anmonteiro/now-static-bin.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anmonteiro/now-static-bin/issues"
+  },
+  "homepage": "https://github.com/anmonteiro/now-static-bin",
+  "dependencies": {
+    "@now/build-utils": "*",
+    "@now/node-bridge": "*"
+  }
+}
