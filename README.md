@@ -1,4 +1,4 @@
-# now-bin-builder
+# now-static-bin
 
 This package provides a [builder](https://zeit.co/docs/v2/deployments/builders/overview#when-to-use-builders)
 for Zeit's [Now 2.0](https://zeit.co/blog/now-2) offering that enables running
