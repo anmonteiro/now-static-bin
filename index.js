@@ -9,6 +9,10 @@ const fsp = {
   readFile: promisify(fs.readFile)
 };
 
+exports.config = {
+  maxLambdaSize: '25mb',
+};
+
 exports.build = async ({ files, entrypoint, config }) => {
   console.log('preparing lambda files...');
   const launcherPath = path.join(__dirname, 'launcher.js');
