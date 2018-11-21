@@ -1,44 +1,30 @@
 const { createLambda } = require('@now/build-utils/lambda.js');
-const FileBlob = require('@now/build-utils/file-blob.js');
-const FileFsRef = require('@now/build-utils/file-fs-ref.js');
-const fs = require('fs');
+const glob = require('@now/build-utils/fs/glob.js');
 const path = require('path');
-const { promisify } = require('util');
-
-const fsp = {
-  readFile: promisify(fs.readFile)
-};
+const rename = require('@now/build-utils/fs/rename.js');
 
 exports.config = {
   maxLambdaSize: '25mb',
 };
 
 exports.build = async ({ files, entrypoint, config }) => {
-  console.log('preparing lambda files...');
-  const launcherPath = path.join(__dirname, 'launcher.js');
-  let launcherData = await fsp.readFile(launcherPath, 'utf8');
+  // move all user code to 'user' subdirectory
+  const userFiles = rename(files, name => path.join('user', name));
+  const launcherFiles = await glob('**', path.join(__dirname, 'dist'));
+  const zipFiles = { ...userFiles, ...launcherFiles };
 
-  if (config.port != null) {
-    launcherData = launcherData.replace(
-      '// BRIDGE_PORT_PLACEHOLDER',
-      `bridge.port = ${config.port};`);
-  }
-
-  launcherData = launcherData.replace(
-    '// PLACEHOLDER',
-    `const proc = initProc({command: "./${entrypoint}"});`);
-
-  const launcherFiles = {
-    'bridge.js': new FileFsRef({ fsPath: require('@now/node-bridge') }),
-    'launcher.js': new FileBlob({
-      data: launcherData
-    }),
-  };
+  const { port, timeout } = Object.assign({}, config);
 
   const lambda = await createLambda({
-    files: { ...files, ...launcherFiles },
-    handler: 'launcher.launcher',
-    runtime: 'nodejs8.10'
+    files: zipFiles,
+    handler: 'launcher',
+    runtime: 'go1.x',
+    environment: {
+      NOW_STATIC_BIN_LOCATION: path.join('user', entrypoint),
+      // TODO: default or error?
+      NOW_STATIC_BIN_PORT: '' + port || '8080',
+      NOW_STATIC_BIN_TIMEOUT: '' + timeout || '50',
+    },
   });
 
   return { [entrypoint]: lambda };

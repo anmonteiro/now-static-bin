@@ -9,23 +9,33 @@ arbitrary executables in the generated lambdas.
 
 Your `now.json` `"builds"` section should look something like this:
 
+## Example
+
+**Note**: don't forget to add `"version": 2` in your `now.json` file to use Now
+2.0 explicitly.
+
 ```json
 {
   "builds": [{
     "src": "*.exe",
     "use": "now-static-bin",
-    "config": { "port": 4000 }
+    "config": {
+      "port": 4000,
+    }
   }]
 }
 ```
 
-**Note**: don't forget to add `"version": 2` in your `now.json` file to use Now
-2.0 explicitly.
+## Configuration Options
+
+- `port`: the port that the deployed server listens on. Defaults to 8080.
+- `timeout`: the timeout that the launcher waits for your server to start
+  listening on the specified port. Defaults to 50ms.
 
 ## Limitations
 
 - Currently only HTTP servers are supported.
-- `"port"` is mandatory in the configuration.
+- `"port"` is mandatory in the configuration, defaults to 8080.
 - The
   [`maxLambdaSize`](https://zeit.co/docs/v2/deployments/concepts/lambdas/#maximum-bundle-size)
   setting defaults to 25MB. You can override this (up to a limit of 50MB) in the
