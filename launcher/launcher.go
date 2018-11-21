@@ -85,8 +85,6 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 	port := os.Getenv("NOW_STATIC_BIN_PORT")
 	url := "http://127.0.0.1:" + port + req.Path
 
-	fmt.Println(url)
-
 	var body string
 	if req.Encoding == "base64" {
 		decoded, _ := base64.StdEncoding.DecodeString(req.Body)

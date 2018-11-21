@@ -29,34 +29,3 @@ exports.build = async ({ files, entrypoint, config }) => {
 
   return { [entrypoint]: lambda };
 };
-
-// exports.build = async ({ files, entrypoint, config }) => {
-//   console.log('preparing lambda files...');
-//   const launcherPath = path.join(__dirname, 'launcher.js');
-//   let launcherData = await fsp.readFile(launcherPath, 'utf8');
-
-//   if (config.port != null) {
-//     launcherData = launcherData.replace(
-//       '// BRIDGE_PORT_PLACEHOLDER',
-//       `bridge.port = ${config.port};`);
-//   }
-
-//   launcherData = launcherData.replace(
-//     '// PLACEHOLDER',
-//     `const proc = initProc({command: "./${entrypoint}"});`);
-
-//   const launcherFiles = {
-//     'bridge.js': new FileFsRef({ fsPath: require('@now/node-bridge') }),
-//     'launcher.js': new FileBlob({
-//       data: launcherData
-//     }),
-//   };
-
-//   const lambda = await createLambda({
-//     files: { ...files, ...launcherFiles },
-//     handler: 'launcher.launcher',
-//     runtime: 'nodejs8.10'
-//   });
-
-//   return { [entrypoint]: lambda };
-// };
