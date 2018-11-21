@@ -58,7 +58,6 @@ func init() {
 }
 
 func createErrorResponse(message string, code string, statusCode int) (events.APIGatewayProxyResponse, error) {
-	defer cleanup()
 	obj := ResponseErrorWrapper{
 		Error: ResponseError{
 			Code:    code,

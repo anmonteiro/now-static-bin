@@ -23,7 +23,7 @@ exports.build = async ({ files, entrypoint, config }) => {
       NOW_STATIC_BIN_LOCATION: path.join('user', entrypoint),
       // TODO: default or error?
       NOW_STATIC_BIN_PORT: '' + port || '8080',
-      NOW_STATIC_BIN_TIMEOUT: timeout || '50',
+      NOW_STATIC_BIN_TIMEOUT: '' + timeout || '50',
     },
   });
 
