@@ -15,10 +15,8 @@ RUN go get -v github.com/aws/aws-lambda-go/events
 RUN go get -v github.com/cenkalti/backoff
 
 COPY ./launcher.go /root/go/app/launcher.go
-# COPY ./test.go /root/go/app/test.go
 
 RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -o launcher launcher.go
-# RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -o test test.go
 
 RUN strip launcher
 RUN ./upx/upx --ultra-brute --best launcher
