@@ -15,14 +15,16 @@
 
 - Don't run UPX on the launcher, as it increases startup time
   ([eff3ad8](https://github.com/anmonteiro/now-static-bin/commit/eff3ad83adf77a8b4b642e2f7009d876e8db0d57)).
-  See https://github.com/zeit/now-builders/issues/63 for context.
+  See [zeit/now-builders#63](https://github.com/zeit/now-builders/issues/63) for context.
 
 ## [0.2.0](https://github.com/anmonteiro/now-static-bin/compare/0.1.1...0.2.0) (2018-11-22)
 
 ### New features
 
 - Allow a `timeout` configuration option to specify how long the launcher should
-  wait for the server to start. Defaults to 50 milliseconds.
+  wait for the server to start
+  ([#1](https://github.com/anmonteiro/now-static-bin/pull/1)). Defaults to 50
+  milliseconds.
 
 ### Changes
 
