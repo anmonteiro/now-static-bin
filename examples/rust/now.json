@@ -1,0 +1,20 @@
+{
+  "name": "now-static-bin-rust",
+  "public": true,
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.exe",
+      "use": "now-static-bin",
+      "config": {
+        "port": 7878
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/.*",
+      "dest": "/server.exe"
+    }
+  ]
+}
