@@ -101,10 +101,9 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 
 	for k, v := range req.Headers {
 		localHttpReq.Header.Add(k, v)
-		// TODO: do we want / need this?
-		// if strings.ToLower(k) == "host" {
-		// 	internalReq.Host = v
-		// }
+		if strings.ToLower(k) == "host" {
+			localHttpReq.Host = v
+		}
 	}
 
 	client := &http.Client{}
