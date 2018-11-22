@@ -1,21 +1,16 @@
 {
-  "name": "now-static-bin-echo",
+  "name": "now-static-bin-examples",
+  "alias": "now-static-bin-examples",
   "public": true,
   "version": 2,
   "builds": [
     {
-      "src": "main.exe",
+      "src": "examples/**/*.exe",
       "use": "now-static-bin",
       "config": {
         "port": 4000,
         "timeout": 20
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "^/.*",
-      "dest": "/main.exe"
     }
   ]
 }
