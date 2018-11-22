@@ -2,13 +2,20 @@
   "name": "now-static-bin-echo",
   "public": true,
   "version": 2,
-  "builds": [ {
-    "src": "main.exe",
-    "use": "now-static-bin@canary",
+  "builds": [
+    {
+      "src": "main.exe",
+      "use": "now-static-bin",
       "config": {
         "port": 4000,
-        "timeout": 2
+        "timeout": 20
       }
-  } ],
-  "routes": [ {"src": "^/.*", "dest": "/main.exe"} ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/.*",
+      "dest": "/main.exe"
+    }
+  ]
 }
