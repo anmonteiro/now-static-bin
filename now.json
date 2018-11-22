@@ -1,5 +1,6 @@
 {
   "name": "now-static-bin-examples",
+  "alias": "now-static-bin-examples",
   "public": true,
   "version": 2,
   "builds": [
