@@ -5,7 +5,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "examples/bintry/*.exe",
+      "src": "examples/**/*.exe",
       "use": "now-static-bin",
       "config": {
         "port": 4000,
