@@ -5,7 +5,7 @@
   "builds": [
     {
       "src": "server.exe",
-      "use": "now-static-bin",
+      "use": "now-static-bin@canary",
       "config": {
         "port": 7878
       }
