@@ -9,7 +9,7 @@ exports.config = {
   maxLambdaSize: '25mb',
 };
 
-exports.analyze = ({ files, entrypoint }) => {
+exports.analyze = ({ files, entrypoint, config }) => {
   const entrypointHash = files[entrypoint].digest;
   const objHash = objectHash(config, { algorithm: 'sha256' });
   const combinedHashes = [entrypointHash, objHash].join('');
