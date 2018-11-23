@@ -1,6 +1,6 @@
 {
   "name": "now-static-bin",
-  "version": "0.2.3-canary.0",
+  "version": "0.2.3-canary.2",
   "description": "ZEIT Now v2.0 static binary builder",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/anmonteiro/now-static-bin",
   "dependencies": {
-    "@now/build-utils": "*",
-    "@now/node-bridge": "*"
+    "@now/build-utils": "^0.4.29",
+    "object-hash": "^1.3.1"
   }
 }
