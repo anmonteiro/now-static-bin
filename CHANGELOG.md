@@ -12,6 +12,8 @@
 - Added a new
   [`analyze`](https://zeit.co/docs/v2/deployments/builders/developer-guide/#defining-the-analyze-step)
   step to avoid stale builds.
+- Fixed a bug where the configuration options defaulted to `"undefined"` if not
+  supplied ([#9](https://github.com/anmonteiro/now-static-bin/pull/9)).
 
 ## [0.2.2](https://github.com/anmonteiro/now-static-bin/compare/0.2.1...0.2.2) (2018-11-23)
 
