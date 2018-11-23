@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -e pipefail
+set -eo pipefail
 
 root_path=$PWD
 

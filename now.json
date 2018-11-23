@@ -5,11 +5,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "examples/**/*.exe",
+      "src": "examples/bintry/main.exe",
       "use": "now-static-bin@canary",
       "config": {
         "port": 4000,
-        "timeout": 20
+        "timeout": 100
+      }
+    },
+    {
+      "src": "examples/rust/server.exe",
+      "use": "now-static-bin@canary",
+      "config": {
+        "port": 7878,
+        "timeout": 100
       }
     }
   ]
