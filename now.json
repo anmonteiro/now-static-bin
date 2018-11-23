@@ -6,7 +6,7 @@
   "builds": [
     {
       "src": "examples/**/*.exe",
-      "use": "now-static-bin",
+      "use": "now-static-bin@canary",
       "config": {
         "port": 4000,
         "timeout": 20
