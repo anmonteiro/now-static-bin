@@ -2,6 +2,11 @@
 
 ## [master](https://github.com/anmonteiro/now-static-bin/compare/0.2.2...HEAD)  (unreleased)
 
+### Changes
+
+- Pipe stdout / stderr from the spawned child process so that it appears in `now
+  logs` ([#7](https://github.com/anmonteiro/now-static-bin/pull/7)).
+
 ## [0.2.2](https://github.com/anmonteiro/now-static-bin/compare/0.2.1...0.2.2) (2018-11-23)
 
 ### Bug fixes

@@ -48,6 +48,8 @@ func init() {
 	scriptPath := os.Getenv("NOW_STATIC_BIN_LOCATION")
 	cmdName = path.Join(filepath.Dir(ex), scriptPath)
 	cmd = exec.Command(cmdName)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 	if err = cmd.Start(); err != nil {
 		fmt.Fprintln(os.Stderr, "There was an error starting your program: ", err)
 		os.Exit(1)
