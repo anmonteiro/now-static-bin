@@ -7,6 +7,12 @@
 - Pipe stdout / stderr from the spawned child process so that it appears in `now
   logs` ([#7](https://github.com/anmonteiro/now-static-bin/pull/7)).
 
+### Bug Fixes
+
+- Added a new
+  [`analyze`](https://zeit.co/docs/v2/deployments/builders/developer-guide/#defining-the-analyze-step)
+  step to avoid stale builds.
+
 ## [0.2.2](https://github.com/anmonteiro/now-static-bin/compare/0.2.1...0.2.2) (2018-11-23)
 
 ### Bug fixes
@@ -20,7 +26,8 @@
 
 - Don't run UPX on the launcher, as it increases startup time
   ([eff3ad8](https://github.com/anmonteiro/now-static-bin/commit/eff3ad83adf77a8b4b642e2f7009d876e8db0d57)).
-  See [zeit/now-builders#63](https://github.com/zeit/now-builders/issues/63) for context.
+  See [zeit/now-builders#63](https://github.com/zeit/now-builders/issues/63) for
+  context.
 
 ## [0.2.0](https://github.com/anmonteiro/now-static-bin/compare/0.1.1...0.2.0) (2018-11-22)
 
