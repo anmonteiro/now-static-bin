@@ -26,7 +26,10 @@ exports.build = async ({ files, entrypoint, config }) => {
   const launcherFiles = await glob('**', path.join(__dirname, 'dist'));
   const zipFiles = { ...userFiles, ...launcherFiles };
 
-  const { port, timeout } = Object.assign({}, config);
+  const { port, timeout } = Object.assign(
+    { port: 8080, timeout: 50 },
+    config || {},
+  );
 
   const lambda = await createLambda({
     files: zipFiles,
@@ -34,9 +37,8 @@ exports.build = async ({ files, entrypoint, config }) => {
     runtime: 'go1.x',
     environment: {
       NOW_STATIC_BIN_LOCATION: path.join('user', entrypoint),
-      // TODO: default or error?
-      NOW_STATIC_BIN_PORT: '' + port || '8080',
-      NOW_STATIC_BIN_TIMEOUT: '' + timeout || '50',
+      NOW_STATIC_BIN_PORT: '' + port,
+      NOW_STATIC_BIN_TIMEOUT: '' + timeout,
     },
   });
 
