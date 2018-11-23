@@ -7,6 +7,8 @@ exports.config = {
   maxLambdaSize: '25mb',
 };
 
+exports.analyze = ({ files, entrypoint }) => files[entrypoint].digest;
+
 exports.build = async ({ files, entrypoint, config }) => {
   // move all user code to 'user' subdirectory
   const userFiles = rename(files, name => path.join('user', name));
