@@ -16,15 +16,32 @@ Your `now.json` `"builds"` section should look something like this:
 
 ```json
 {
-  "builds": [{
-    "src": "*.exe",
-    "use": "now-static-bin",
-    "config": {
-      "port": 4000,
+  "builds": [
+    {
+      "src": "*.exe",
+      "use": "now-static-bin",
+      "config": {
+        "port": 4000
+      }
     }
-  }]
+  ]
 }
 ```
+
+### Other Examples
+
+Make sure to check the [`examples`](./examples) folder in this repo for
+different language
+
+They are also deployed on every commit to master and the latest build lives in
+[`now-static-bin-examples.now.sh`](https://now-static-bin-examples.now.sh/).
+Details:
+
+| Example    | Demo     | Description     |
+|:---------- |:---------|:----------------|
+| [OCaml](/examples/bintry) | [https://now-static-bin-examples.now.sh/examples/bintry/main.exe](https://now-static-bin-examples.now.sh/examples/bintry/main.exe) | An OCaml static binary example server (no source available for now) |
+| [Rust](/examples/rust) | [https://now-static-bin-examples.now.sh/examples/rust/server.exe](https://now-static-bin-examples.now.sh/examples/rust/server.exe) | A Rust [simple-server](https://github.com/steveklabnik/simple-server) example |
+| [Reason](/examples/reason) | [https://now-static-bin-examples.now.sh/examples/reason/main.exe](https://now-static-bin-examples.now.sh/examples/reason/main.exe) | A [Reason](https://reasonml.github.io/) native server example that outputs request information |
 
 ## Configuration Options
 
@@ -35,7 +52,6 @@ Your `now.json` `"builds"` section should look something like this:
 ## Limitations
 
 - Currently only HTTP servers are supported.
-- `"port"` is mandatory in the configuration, defaults to 8080.
 - The
   [`maxLambdaSize`](https://zeit.co/docs/v2/deployments/concepts/lambdas/#maximum-bundle-size)
   setting defaults to 25MB. You can override this (up to a limit of 50MB) in the
@@ -43,15 +59,17 @@ Your `now.json` `"builds"` section should look something like this:
 
 ```json
 {
-  "builds": [{
-    "src": "*.exe",
-    "use": "now-static-bin",
-    "config": {
-      "port": 4000,
-      "maxLambdaSize": "50mb"
-      ^^^ NEW
+  "builds": [
+    {
+      "src": "*.exe",
+      "use": "now-static-bin",
+      "config": {
+        "port": 4000,
+        "maxLambdaSize": "50mb"
+        ^^^ NEW
+      }
     }
-  }]
+  ]
 }
 ```
 
