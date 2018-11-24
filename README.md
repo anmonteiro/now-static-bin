@@ -30,12 +30,12 @@ Your `now.json` `"builds"` section should look something like this:
 
 ### Other Examples
 
-Make sure to check the [`examples`](./examples) folder in this repo for
-different language
+Make sure to check the [`examples`](./examples) folder in this repo for examples
+in different programming languages. Below is a table that details their
+implementation choices.
 
 They are also deployed on every commit to master and the latest build lives in
 [`now-static-bin-examples.now.sh`](https://now-static-bin-examples.now.sh/).
-Details:
 
 | Example    | Demo     | Description     |
 |:---------- |:---------|:----------------|
