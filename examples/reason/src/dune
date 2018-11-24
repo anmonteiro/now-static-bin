@@ -1,0 +1,6 @@
+(executable
+  (name main)
+  (libraries cohttp-lwt-unix lwt.unix))
+
+(env
+ (docker (flags (:standard -ccopt -static))))

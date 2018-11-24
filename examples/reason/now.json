@@ -1,0 +1,8 @@
+{
+  "name": "now-static-bin-reason",
+  "version": 2,
+  "builds": [
+    { "src": "main.exe", "use": "now-static-bin", "config": { "port": 8000 } }
+  ],
+  "routes": [{ "src": "^/.*", "dest": "/main.exe" }]
+}

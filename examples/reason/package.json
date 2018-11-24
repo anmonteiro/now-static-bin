@@ -1,0 +1,13 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opam/dune": "*",
+    "@opam/reason": "*",
+    "@opam/cohttp-lwt-unix": "*",
+    "@opam/lwt": "*"
+  }
+}

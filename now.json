@@ -8,8 +8,7 @@
       "src": "examples/bintry/main.exe",
       "use": "now-static-bin@canary",
       "config": {
-        "port": 4000,
-        "timeout": 100
+        "port": 4000
       }
     },
     {
@@ -18,6 +17,13 @@
       "config": {
         "port": 7878,
         "timeout": 100
+      }
+    },
+    {
+      "src": "examples/reason/main.exe",
+      "use": "now-static-bin@canary",
+      "config": {
+        "port": 8000
       }
     }
   ]
