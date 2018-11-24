@@ -39,9 +39,9 @@ Details:
 
 | Example    | Demo     | Description     |
 |:---------- |:---------|:----------------|
-| [OCaml](/examples/bintry) | [https://now-static-bin-examples.now.sh/examples/bintry/main.exe](https://now-static-bin-examples.now.sh/examples/bintry/main.exe) | An OCaml static binary example server (no source available for now) |
+| [OCaml](/examples/bintry) | [https://now-static-bin-examples.now.sh/examples/bintry/main.exe](https://now-static-bin-examples.now.sh/examples/bintry/main.exe) | An OCaml static binary example server (no source available yet) |
 | [Rust](/examples/rust) | [https://now-static-bin-examples.now.sh/examples/rust/server.exe](https://now-static-bin-examples.now.sh/examples/rust/server.exe) | A Rust [simple-server](https://github.com/steveklabnik/simple-server) example |
-| [Reason](/examples/reason) | [https://now-static-bin-examples.now.sh/examples/reason/main.exe](https://now-static-bin-examples.now.sh/examples/reason/main.exe) | A [Reason](https://reasonml.github.io/) native server example that outputs request information |
+| [Reason](/examples/reason) | [https://now-static-bin-examples.now.sh/examples/reason/main.exe](https://now-static-bin-examples.now.sh/examples/reason/main.exe) | A [Reason](https://reasonml.github.io/) [Cohttp](https://github.com/mirage/ocaml-cohttp) server example that outputs request information |
 
 ## Configuration Options
 
