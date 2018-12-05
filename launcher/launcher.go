@@ -107,8 +107,31 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 			localHttpReq.Host = v
 		}
 	}
-
-	client := &http.Client{}
+	for k, v := range req.Headers {
+		localHttpReq.Header.Add(k, v)
+		switch strings.ToLower(k) {
+		case "host":
+			// we need to set `Host` in the request
+			// because Go likes to ignore the `Host` header
+			// see https://github.com/golang/go/issues/7682
+			localHttpReq.Host = v
+		case "content-length":
+			contentLength, _ := strconv.ParseInt(v, 10, 64)
+			localHttpReq.ContentLength = contentLength
+		case "x-forwarded-for":
+		case "x-real-ip":
+			localHttpReq.RemoteAddr = v
+		}
+	}
+	// Taken from https://github.com/zeit/now-builders/pull/67
+	client := &http.Client{
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			// we don't want to follow any redirects. that's something the actual client
+			// (i.e., the end user) should do. this internal request is just an implementation detail
+			// that acts like a proxy, so it shouldn't do things that are supposed to be done by the client
+			return http.ErrUseLastResponse
+		},
+	}
 
 	var internalRes *http.Response
 	// Should always be present, the builders sets it.
