@@ -1,6 +1,8 @@
 # Changelog
 
-## [master](https://github.com/anmonteiro/now-static-bin/compare/0.2.3...HEAD)  (unreleased)
+## [master](https://github.com/anmonteiro/now-static-bin/compare/0.2.4...HEAD)  (unreleased)
+
+## [0.2.4](https://github.com/anmonteiro/now-static-bin/compare/0.2.3...0.2.4) (2018-11-23)
 
 ### Bug Fixes
 
