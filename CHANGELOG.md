@@ -1,6 +1,13 @@
 # Changelog
 
-## [master](https://github.com/anmonteiro/now-static-bin/compare/0.2.2...HEAD)  (unreleased)
+## [master](https://github.com/anmonteiro/now-static-bin/compare/0.2.3...HEAD)  (unreleased)
+
+### Bug Fixes
+
+- Don't follow redirects when proxying requests
+  ([#12](https://github.com/anmonteiro/now-static-bin/pull/12)).
+
+## [0.2.3](https://github.com/anmonteiro/now-static-bin/compare/0.2.2...0.2.3) (2018-11-23)
 
 ### Changes
 
@@ -15,14 +22,14 @@
 - Fixed a bug where the configuration options defaulted to `"undefined"` if not
   supplied ([#9](https://github.com/anmonteiro/now-static-bin/pull/9)).
 
-## [0.2.2](https://github.com/anmonteiro/now-static-bin/compare/0.2.1...0.2.2) (2018-11-23)
+## [0.2.2](https://github.com/anmonteiro/now-static-bin/compare/0.2.1...0.2.2) (2018-11-22)
 
 ### Bug fixes
 
 - Preserve HTTP Host information when proxying requests
   ([#4](https://github.com/anmonteiro/now-static-bin/pull/4)).
 
-## [0.2.1](https://github.com/anmonteiro/now-static-bin/compare/0.2.0...0.2.1) (2018-11-23)
+## [0.2.1](https://github.com/anmonteiro/now-static-bin/compare/0.2.0...0.2.1) (2018-11-22)
 
 ### Changes
 
@@ -31,7 +38,7 @@
   See [zeit/now-builders#63](https://github.com/zeit/now-builders/issues/63) for
   context.
 
-## [0.2.0](https://github.com/anmonteiro/now-static-bin/compare/0.1.1...0.2.0) (2018-11-22)
+## [0.2.0](https://github.com/anmonteiro/now-static-bin/compare/0.1.1...0.2.0) (2018-11-21)
 
 ### New features
 
