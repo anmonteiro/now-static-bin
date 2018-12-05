@@ -1,6 +1,6 @@
 {
   "name": "now-static-bin",
-  "version": "0.2.3",
+  "version": "0.2.4-canary.0",
   "description": "ZEIT Now v2.0 static binary builder",
   "main": "index.js",
   "scripts": {
