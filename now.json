@@ -25,6 +25,16 @@
       "config": {
         "port": 8000
       }
+    },
+    {
+      "src": "examples/go-graphql/main.exe",
+      "use": "now-static-bin@canary",
+      "config": {
+        "port": 8080
+      }
     }
+  ],
+  "routes": [
+    {"src": "^/go-graphql", "dest": "/examples/go-graphql/main.exe"}
   ]
 }
