@@ -1,0 +1,20 @@
+{
+  "name": "now-static-bin-go-graphql",
+  "public": true,
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.exe",
+      "use": "now-static-bin",
+      "config": {
+        "port": 8080
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/.*",
+      "dest": "/main.exe"
+    }
+  ]
+}
