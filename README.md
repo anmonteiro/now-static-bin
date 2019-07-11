@@ -52,26 +52,6 @@ They are also deployed on every commit to master and the latest build lives in
 ## Limitations
 
 - Currently only HTTP servers are supported.
-- The
-  [`maxLambdaSize`](https://zeit.co/docs/v2/deployments/concepts/lambdas/#maximum-bundle-size)
-  setting defaults to 25MB. You can override this (up to a limit of 50MB) in the
-  builder config, e.g.:
-
-```json
-{
-  "builds": [
-    {
-      "src": "*.exe",
-      "use": "now-static-bin",
-      "config": {
-        "port": 4000,
-        "maxLambdaSize": "50mb"
-        ^^^ NEW
-      }
-    }
-  ]
-}
-```
 
 ## Copyright and License
 
