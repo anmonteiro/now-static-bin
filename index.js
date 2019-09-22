@@ -5,10 +5,6 @@ const glob = require('@now/build-utils/fs/glob.js');
 const rename = require('@now/build-utils/fs/rename.js');
 const objectHash = require('object-hash');
 
-exports.config = {
-  maxLambdaSize: '25mb',
-};
-
 exports.analyze = ({ files, entrypoint, config }) => {
   const entrypointHash = files[entrypoint].digest;
   const objHash = objectHash(config, { algorithm: 'sha256' });
